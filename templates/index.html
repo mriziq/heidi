@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Home</title>
+<link rel='stylesheet' type='text/css' href='static/css/style.css'>
+</head>
+<body style="background-color: #080808;">
+  <script src="https://unpkg.com/floating.js"></script>
+  <script>
+    floating({
+      content: '🧠',
+      number: 10,
+      direction: 'reverse',
+      size: [1,2]
+    });
+    floating({
+      content: '🔥',
+      number: 10,
+      direction: 'reverse',
+      size: [1,2]
+    });
+    floating({
+      content: '⚡️',
+      number: 10,
+      direction: 'reverse',
+      size: [1,2]
+    });
+    floating({
+      content: '🤖',
+      number: 10,
+      direction: 'reverse',
+      size: [1,2]
+    });
+  </script>
+
+  <div style="margin-top: 100px; margin-left:100px">
+  <img src={{ url_for('static', filename='brain_demo.png') }}  class="icon">
+
+
+<p style="color: white; font-size: 20px; font-family: Avenir;"><b>Hy-de: A deep learning model to predict cheating, <i>before</i> the exam.</b></p>
+</br>
+<button onclick="snd.play()"> </button>
+<script>
+    var snd = new Audio("{{ url_for('static', filename='assets/heidi_hello.mp3') }}");
+</script>
+<button onclick="snd2.play()"> </button>
+<script>
+    var snd2 = new Audio("{{ url_for('static', filename='assets/heidi_bayview.mp3') }}");
+</script>
+<button onclick="snd3.play()"> </button>
+<script>
+    var snd3 = new Audio("{{ url_for('static', filename='assets/heidi_gbye.mp3') }}");
+</script>
+  <form action="{{  url_for('predict')  }}">
+    <input type="submit" value="Predict">
+  </form>
+
+  <form action="{{  url_for('describe')  }}">
+    <input type="submit" value="Describe">
+  </form>
+
+  <form action="{{  url_for('conf')  }}">
+    <input type="submit" value="Confidence">
+  </form>
+
+  <form action="{{  url_for('hypothesis')  }}">
+    <input type="submit" value="Run Hypothesis Tests">
+  </form>
+  </div>
+
+</body>
+</html>

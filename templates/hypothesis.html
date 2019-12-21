@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Hypothesis Tests</title>
+<link rel='stylesheet' type='text/css' href='static/css/style.css'>
+<script>
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'complete') {
+         document.getElementById('interactive');
+         document.getElementById('load').style.visibility="hidden";
+  }
+}
+</script>
+</head>
+<body  style="background-color: #080808">
+
+  <div id="load"></div>
+
+    <div style="width: 500px; margin-top: 200px; margin-left: 200px; transition-delay: 3s;">
+
+      <p style=" color: white; font-size: 35px; font-family: Avenir;"><b>Below are computed results:</b></p>
+      <p style="color: white; font-size: 25px; font-family: Avenir;">{{  hypothesis  }}</p>
+      <form action="{{  url_for('home')  }}">
+        <input type="submit" value="Return">
+      </form>
+    </div>
+
+
+
+</body>
+</html>
